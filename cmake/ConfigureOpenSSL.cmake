@@ -126,6 +126,8 @@ function(configure_openssl)
     )
     string(REPLACE "\n" ";" PLATFORM_LIST ${PLATFORM_LIST})
     list(GET CONFIGURE_OPTIONS 0 TARGET_PLATFORM)
+    message(STATUS "TARGET_PLATFORM: ${TARGET_PLATFORM}")
+    message(STATUS "PLATFORM_LIST: ${PLATFORM_LIST}")
 
     if(NOT TARGET_PLATFORM IN_LIST PLATFORM_LIST)
         message(FATAL_ERROR "${TARGET_PLATFORM} isn't supported")
